@@ -17,11 +17,22 @@ def sensor(request):
 	Time_char= Sensor.objects.values_list('Date_and_Time',flat=True).order_by('-id')[:10]
 	tr = Sensor.objects.values_list('SensorID',flat=True).distinct()
 	return render(request, 'sensor/sensor.html', {'Id':Id,'Time':Time,'Temperature':Temperature,'Humidity':Humidity,'char1':char1,'char2':char2,'Time_char':Time_char,'tr':tr})
+
 @login_required
 def get_more_tables(request):
     order =  Sensor.objects.order_by('-id')[:5]
     return render(request, 'sensor/get_more_tables.html', {'order': order})
+
 @login_required
 def get_more_values(request):
     values =  Sensor.objects.latest('Date_and_Time')
     return render(request, 'sensor/get_more_values.html', {'values': values})
+
+@login_required
+def get_more_chars1(request):
+
+
+	char1= Sensor.objects.values_list('Temperature',flat=True).order_by('-id')[:10]
+	char2= Sensor.objects.values_list('Humidity',flat=True).order_by('-id')[:10]
+	Time_char= Sensor.objects.values_list('Date_and_Time',flat=True).order_by('-id')[:10]
+	return render(request, 'sensor/get_more_chars1.html', {'char1': char1,'Time_char':Time_char,'char2':char2})

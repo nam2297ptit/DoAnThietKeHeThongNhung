@@ -287,6 +287,22 @@ body.hero-anime .history{
 .history h3{
 	text-align: center;
 }
+/* #Char
+================================================== */
+
+.char{
+	transform: translate(0);
+    transition: all 300ms linear;
+	transition-delay: 1700ms;	
+}
+
+body.hero-anime .char{
+	opacity: 0;
+	transform: translateY(40px);
+    transition-delay: 1700ms;
+}
+
+
 
 /* #Media
 ================================================== */

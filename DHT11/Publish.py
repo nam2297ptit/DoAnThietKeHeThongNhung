@@ -44,7 +44,7 @@ def publish_Fake_Sensor_Values_to_MQTT():
     Temperature_Fake_Value = int(random.uniform(20, 30))
     Sensor_data = {}
     Sensor_data['Sensor_ID'] = "DHT-11"
-    Sensor_data['Date'] = (datetime.today()).strftime("%d-%b-%Y %H:%M:%S")
+    Sensor_data['Time'] = (datetime.today()).strftime("%d-%b-%Y %H:%M:%S")
     Sensor_data['Humidity'] = Humidity_Fake_Value
     Sensor_data['Temperature'] = Temperature_Fake_Value
     sensor_json_data = json.dumps(Sensor_data)

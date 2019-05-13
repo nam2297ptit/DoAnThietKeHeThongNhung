@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/sensor.css' %}">
+{% for char1 in char1 %}
+  {{ char1 }}
+  {% endfor %}
+<script>
+    Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Sensor'
+    },
+    subtitle: {
+        text: 'Source: Đồ án thiết kế  hệ thống nhúng'
+    },
+    xAxis: {
+        categories: [{% for Time_char in Time_char %}
+  '{{ Time_char }}',
+  {% endfor %}]
+    },
+    yAxis: {
+        title: {
+            text: 'Temperature (°C) / Humidity (%)'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'Temperature',
+        data: [{% for char1 in char1 %}
+  {{ char1 }},
+  {% endfor %},]
+    }, {
+        name: 'Humidity',
+        data: [{% for char2 in char2 %}
+  {{ char2 }},
+  {% endfor %},]
+    }]
+});
+</script>

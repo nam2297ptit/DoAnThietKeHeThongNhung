@@ -1,4 +1,4 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/sensor.css' %}">
-<p><img src="http://icons.iconarchive.com/icons/custom-icon-design/lovely-weather-2/256/Humidity-icon.png" alt="" class="d-inline">Temperature: <span class="humidity">{{ values.Humidity }}%</span></p>
-<p><img src="https://dumielauxepices.net/sites/default/files/warmth-clipart-high-temperature-817482-8832270.png" alt="" class="d-inline">Humidity: <span class="temperature">{{ values.Temperature }}°C</span></p>
+<p class="col-md-4 d-inline"><img src="http://icons.iconarchive.com/icons/custom-icon-design/lovely-weather-2/256/Humidity-icon.png" alt="" class="d-inline">Hum: <span class="humidity">{{ values.Humidity }}%</span></p>
+<p class="col-md-4 d-inline"><img src="https://dumielauxepices.net/sites/default/files/warmth-clipart-high-temperature-817482-8832270.png" alt="" class="d-inline">Temp: <span class="temperature">{{ values.Temperature }}°C</span></p>

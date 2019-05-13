@@ -4,7 +4,7 @@ from Get_Data_to_DB import Sensor
 # The callback for when the client receives a CONNACK response from the server.
 #====================================================
 # MQTT Settings 
-MQTT_Broker = "test.mosquitto.org"
+MQTT_Broker = "localhost"
 MQTT_Port = 1883
 Keep_Alive_Interval = 45
 MQTT_Topic = "home/sensors/#"

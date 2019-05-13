@@ -10,7 +10,7 @@ def Sensor(jsonData):
 	#Parse Data 
 	json_Dict = json.loads(jsonData)
 	SensorID = json_Dict['Sensor_ID']
-	Data_and_Time = json_Dict['Date']
+	Data_and_Time = json_Dict['Time']
 	Temperature = json_Dict['Temperature']
 	Humidity = json_Dict['Humidity']
 	#Push into DB Table
