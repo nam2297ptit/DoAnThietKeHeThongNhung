@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/sensor.css' %}">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript"> 
+            var auto_refresh = setInterval( function() {
+               $('#myTable').load('http://127.0.0.1:8000/tables/').fadeIn("slow");
+               $('#data').load('http://127.0.0.1:8000/values/').fadeIn("slow");
+                }, 1000); // refreshing after every 15000 milliseconds 
+        </script> 
+           
+    </head>
+    <body class="hero-anime">	
+        <div class="container">
+            <h1><span>Đ</span><span>ồ </span> <span>Á</span><span>n</span> <span>T</span><span>h</span><span>i</span><span>ế</span><span>t</span> 
+                <span>K</span><span>ế</span> <span>H</span><span>ệ</span> <span>T</span><span>h</span><span>ố</span><span>n</span><span>g</span> 
+                <span>N</span><span>h</span><span>ú</span><span>n</span><span>g</span></h1>
+            <p class="navbr"> Nhóm : </p>	
+
+        </div>
+        <div class="data" id="data">  
+        </div>
+        <div class="col-md-6 history" id="myTable"></div>
+    </body> 
+</html>

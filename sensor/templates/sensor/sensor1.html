@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="DoAnHeThongNhung">
+  <meta name="description" content="Sensor">
+  <meta name="author" content="Duy Nam">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/sensor.css' %}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+ <script type="text/javascript"> 
+ var auto_refresh = setInterval( function() {
+    $('#myTable').load('http://127.0.0.1:8000/more/').fadeIn("slow");
+     }, 1000); // refreshing after every 15000 milliseconds </script> 
+
+
+</head>
+<body>
+  <div class="navigation">
+    <a class="button" href="{% url 'logout' %}">
+      <img src="http://media2.sieuhai.tv:8088/onbox/images/user_lead_image//20181123/0362828959_20181123223727.jpg">
+    <div class="logout">LOGOUT</div>
+    </a>
+  </div>
+      <h1>Đồ án thiết kế hệ thống nhúng</h1>
+    <div class='main'>
+        <div class='card temp'>
+            <div class='inner'>
+                <div class='icon'></div>
+      <div class='title'>
+        <div class='text'>TEMPERATURE</div>
+      </div>
+      <div class='number' id="temp"></div>
+    </div>
+  </div>
+  <div class='card humidity'>
+    <div class='inner'>
+      <div class='icon'></div>
+      <div class='title'>
+        <div class='text'>HUMIDITY</div>
+      </div>
+      <div class='number'>{{ Time.Humidity }}  %</div>
+    </div>
+  </div>
+</div>
+  
+<!-- <div class="temp-table">
+  <h1>Temperature</h1>
+<table >
+  <tr>
+    <th>Sensor_ID</th>
+    <th>Temperature °C</th>
+    <th>Date_and_Time</th>
+  </tr>
+  {% for Id in Id %}
+  <tr>
+    <td>{{ Id.SensorID }}</td>
+    <td>{{ Id.Temperature }}</td>
+    <td>{{ Id.Date_and_Time }}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+</div> -->
+<!-- <script>
+
+  $(document).ready(function(){
+  $("#myTable").load("http://127.0.0.1:8000/more/");
+});
+
+</script> -->
+<div class="hum-table" id="myTable">
+
+</div>
+</body>
+</html>

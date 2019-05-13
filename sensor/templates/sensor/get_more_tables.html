@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/sensor.css' %}">
+<h3>History</h3>
+<table class="table">
+    <thead>
+        <tr>
+        <th style="width: 16.66%">id</th>
+        <th style="width: 25%">Temp</th>
+        <th style="width: 25%">Hum</th>
+        <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for Id in order %}
+      <tr>
+        <td>{{ Id.SensorID }}</td>
+        <td>{{ Id.Temperature }}</td>
+        <td>{{ Id.Humidity }}</td>
+        <td>{{ Id.Date_and_Time }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+        
